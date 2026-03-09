@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import {
   createProduct,
   getAllProducts,
@@ -7,8 +8,10 @@ import {
   deleteProduct,
 } from "../controller/product.controller.js";
 
+import validateJoi from "../validations/Bouns-joi/validateJoi.js";
+import { createProductSchema } from "../validations/Bouns-joi/productSchema.js";
+
 import {
-  createProductValidator,
   updateProductValidator,
 } from "../validations/productValidator.js";
 
@@ -19,10 +22,10 @@ const router = Router();
 
 router.get("/", getAllProducts);
 
+//  Joi Bonus
 router.post(
   "/",
-  createProductValidator,
-  validateResults,
+  validateJoi(createProductSchema),
   createProduct
 );
 

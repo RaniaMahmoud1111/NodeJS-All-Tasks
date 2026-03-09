@@ -27,10 +27,22 @@ export const createUserValidator = [
 
 export const updateUserValidator = [
   body("name")
-    .optional()
-    .isLength({ min: 3, max: 50 }),
-
+    .trim()
+    .notEmpty()
+    .withMessage("Name is required")
+    .isLength({ max: 50, min: 3 })
+    .withMessage("name must be between 3 to 50 char"),
   body("email")
-    .optional()
-    .isEmail(),
+    .trim()
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Not valid email")
+    .normalizeEmail(),
+     body("password")
+    .notEmpty()
+    .withMessage("Password required")
+    .isLength({ min: 8 })
+    .withMessage("Password must be at least 8 chars"),
+
 ];

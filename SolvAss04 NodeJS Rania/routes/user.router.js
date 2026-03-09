@@ -1,4 +1,8 @@
 import { Router } from "express";
+
+import validateJoi from "../Validations/Bouns-joi/validateJoi.js";
+import { createUserSchema } from "../Validations/Bouns-joi/userSchema.js";
+
 import {
   getAllUsers,
   createUser,
@@ -7,11 +11,7 @@ import {
   deleteUser,
 } from "../controller/user.cotroller.js";
 
-import {
-  createUserValidator,
-  updateUserValidator,
-} from "../validations/userValidator.js";
-
+import { updateUserValidator } from "../Validations/userValidator.js";
 import validateResults from "../validations/validateResults.js";
 import { idParamValidator } from "../validations/validateMongoId.js";
 
@@ -19,10 +19,10 @@ const router = Router();
 
 router.get("/", getAllUsers);
 
+// ⭐ Joi Bonus
 router.post(
   "/",
-  createUserValidator,
-  validateResults,
+  validateJoi(createUserSchema),
   createUser
 );
 
