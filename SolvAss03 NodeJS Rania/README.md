@@ -1,24 +1,35 @@
-# Our Demo Project
 
+# Node.js Labs – Task 3
 
-## Starter Notes
-####MongoDb connection string
+This task focuses on **enhancing the API** from previous labs.
 
-* local server: mongodb://localhost:27017/
-* Remote server: mongodb+srv://RemoteUser:afR0Hw2lQO41bX@myplaygroud.8cgl5cg.mongodb.net/?appName=MyPlaygroud
+---
 
-## To connect with mongodb database
- * native code  -> (mongodb)
- * ORM -> Object Rational Mapper 
- * ODM -> Object Document Mapper  (Mongoose)
+## What You Do in Task 3
 
-## Our Project is Blog System
-Users -> admins, users
-	
-user -> can deal with posts, comments, like
-admin -> can handle users, delete posts, comments
-Post ->
-Comment -> 
+* **Lab 2** – Use Express, JSON data, routes, and middlewares
+* **Lab 3** – Switch to MongoDB, use Mongoose models and validation, add global error handling
 
-user will be separate collection
-comment will be embedded in post collection
+---
+
+## How to Run
+
+```bash
+git clone <repo-url>
+cd <repo-folder>
+npm install
+npm run dev
+```
+
+Server runs at: `http://localhost:4000`
+
+---
+
+## Notes
+
+* Use **Postman** or **curl** to test endpoints
+* Follow the API structure from the main README
+* Task 3 is about **refactoring, validation, and error handling**
+
+---
+
